@@ -78,7 +78,7 @@ class Alimento {
             beginShape();
             vertex(-42, 18);
             bezierVertex(-48, -10, 48, -15, 42, 18);
-            closeShape(CLOSE);
+            endShape(CLOSE);
             // Cortes do pão
             line(-20, -2, -12, 8);
             line(-2, -4, 6, 6);
