@@ -387,6 +387,7 @@ class InterfaceUI {
 
         noStroke();
         fill(0);
+        textAlign(CENTER, CENTER);
         textSize(20);
         text("JOGAR NOVAMENTE / REINICIAR", width / 2, this.btnReiniciar.y + this.btnReiniciar.h / 2);
 
