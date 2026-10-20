@@ -305,26 +305,26 @@ class InterfaceUI {
         // Título Game Over
         textSize(42);
         textStyle(BOLD);
-        text("RELATÓRIO DE DESPERDÍCIO", width / 2, 75);
+        text("RELATÓRIO DE DESPERDÍCIO", width / 2, 80);
         textSize(36);
-        text("GAME OVER", width / 2, 125);
+        text("GAME OVER", width / 2, 130);
 
         // Tracinhos laterais do título
         stroke(0);
         strokeWeight(3.5);
-        line(width / 2 - 330, 65, width / 2 - 300, 75);
-        line(width / 2 - 335, 90, width / 2 - 302, 85);
-        line(width / 2 - 320, 115, width / 2 - 298, 100);
+        line(width / 2 - 340, 60, width / 2 - 310, 70);
+        line(width / 2 - 345, 85, width / 2 - 312, 80);
+        line(width / 2 - 330, 105, width / 2 - 308, 90);
 
-        line(width / 2 + 330, 65, width / 2 + 300, 75);
-        line(width / 2 + 335, 90, width / 2 + 302, 85);
-        line(width / 2 + 320, 115, width / 2 + 298, 100);
+        line(width / 2 + 340, 60, width / 2 + 310, 70);
+        line(width / 2 + 345, 85, width / 2 + 312, 80);
+        line(width / 2 + 330, 105, width / 2 + 308, 90);
 
         // Caixa do Relatório
         let cx = width / 2 - 260;
-        let cy = 175;
+        let cy = 210;
         let cw = 520;
-        let ch = 310;
+        let ch = 180;
         fill(255);
         stroke(0);
         strokeWeight(3);
@@ -334,50 +334,23 @@ class InterfaceUI {
         let segs = nf(floor(tempoSegundos % 60), 2);
 
         // 1. Linha Pontuação Final
-        this.desenharEstrela(cx + 65, cy + 50, 10, 22);
-        this.desenharTextoRelatorio(cx, cy + 50, "PONTUAÇÃO FINAL:", pontos);
+        this.desenharEstrela(cx + 65, cy + 55, 10, 22);
+        this.desenharTextoRelatorio(cx, cy + 55, "PONTUAÇÃO FINAL:", pontos);
 
         // 2. Linha Tempo Sobrevivido
         stroke(0);
         strokeWeight(2.5);
         noFill();
-        ellipse(cx + 65, cy + 120, 38, 38);
-        line(cx + 65, cy + 95, cx + 65, cy + 101);
-        line(cx + 58, cy + 95, cx + 72, cy + 95);
-        line(cx + 65, cy + 120, cx + 65, cy + 108);
-        line(cx + 65, cy + 120, cx + 74, cy + 125);
-        this.desenharTextoRelatorio(cx, cy + 120, "TEMPO SOBREVIVIDO:", mins + ":" + segs);
-
-        // 3. Linha Comida Salva (Ícone Maçã)
-        stroke(0);
-        strokeWeight(2.5);
-        noFill();
-        ellipse(cx + 59, cy + 195, 24, 28);
-        ellipse(cx + 71, cy + 195, 24, 28);
-        fill(255);
-        noStroke();
-        rect(cx + 57, cy + 183, 16, 24);
-        stroke(0);
-        arc(cx + 59, cy + 195, 24, 28, HALF_PI, PI + HALF_PI);
-        arc(cx + 71, cy + 195, 24, 28, -HALF_PI, HALF_PI);
-        line(cx + 65, cy + 182, cx + 65, cy + 172);
-        this.desenharTextoRelatorio(cx, cy + 192, "COMIDA SALVA:", percSalva + "%");
-
-        // 4. Linha Comida Desperdiçada (Ícone Caixote do Lixo)
-        stroke(0);
-        strokeWeight(2.5);
-        noFill();
-        rect(cx + 50, cy + 250, 30, 34, 3);
-        rect(cx + 46, cy + 244, 38, 6, 2);
-        rect(cx + 59, cy + 239, 12, 5, 2);
-        line(cx + 58, cy + 257, cx + 58, cy + 276);
-        line(cx + 65, cy + 257, cx + 65, cy + 276);
-        line(cx + 72, cy + 257, cx + 72, cy + 276);
-        this.desenharTextoRelatorio(cx, cy + 265, "COMIDA DESPERDIÇADA:", percDesperdicada + "%");
+        ellipse(cx + 65, cy + 125, 38, 38);
+        line(cx + 65, cy + 100, cx + 65, cy + 106);
+        line(cx + 58, cy + 100, cx + 72, cy + 100);
+        line(cx + 65, cy + 125, cx + 65, cy + 113);
+        line(cx + 65, cy + 125, cx + 74, cy + 130);
+        this.desenharTextoRelatorio(cx, cy + 125, "TEMPO SOBREVIVIDO:", mins + ":" + segs);
 
         // Botão JOGAR NOVAMENTE / REINICIAR
         this.btnReiniciar.x = width / 2 - this.btnReiniciar.w / 2;
-        this.btnReiniciar.y = cy + ch + 40;
+        this.btnReiniciar.y = cy + ch + 45;
 
         let ratoSobre = this.cliqueDentro(mouseX, mouseY, this.btnReiniciar);
         fill(ratoSobre ? 235 : 255);
