@@ -178,12 +178,18 @@ function gerarMicrobioNasBordas(multVelocidade) {
     if (vivos.length === 0) return;
     let alvoEscolhido = random(vivos);
 
-    // Sorteia uma das bordas (Esquerda, Direita ou Baixo)
-    let lado = floor(random(3));
+    // Sorteia apenas entre Esquerda (0) ou Direita (1)
+    let lado = floor(random(2));
     let x, y;
-    if (lado === 0) { x = -30; y = random(90, height - 40); }
-    else if (lado === 1) { x = width + 30; y = random(90, height - 40); }
-    else { x = random(50, width - 50); y = height + 30; }
+    
+    if (lado === 0) { 
+        x = -30; // Nasce fora do ecrã à esquerda
+    } else { 
+        x = width + 30; // Nasce fora do ecrã à direita
+    }
+    
+    // Altura aleatória entre o fim do HUD (90) e acima do rodapé (height - 50)
+    y = random(90, height - 50);
 
     microbios.push(new Microbio(x, y, alvoEscolhido, multVelocidade));
 }
