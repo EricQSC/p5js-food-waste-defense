@@ -19,3 +19,5 @@ Havia um problema que os microbios que nasciam da parte inferior mais no centro 
 26/10/2026
 
 Comecei por eliminar um tracejado que tinha quando clicava entre a mira e o centro do jogo, e tambem troquei um pouco o aspecto do projetil.
+
+Procurar sons mp3 online para diferentes efeitos sonoros e substituir os sons gerados pelo gemini com a biblioteca do p5 por estes mesmos.

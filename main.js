@@ -11,14 +11,21 @@ let vidas = 3;
 let tempoInicioJogo = 0;
 let tempoSobrevivido = 0;
 let ultimoSpawn = 0;
-
-// Feedback visual de Onda Criogénica
 let efeitoGeloAte = 0;
+
+let sons = {};
+
+function preload() {
+    soundFormats('mp3', 'wav');
+    sons.spray = loadSound('efeitossonoros/aerosolspray.mp3');
+    sons.eliminar = loadSound('efeitossonoros/splatwav.mp3');
+    sons.congelar = loadSound('efeitossonoros/icedmagic.mp3');
+}
 
 function setup() {
     createCanvas(1100, 680);
     smooth();
-    audio = new GestorAudio();
+    audio = new GestorAudio(sons);
     ui = new InterfaceUI();
     prepararNovoJogo();
 }

@@ -1,5 +1,5 @@
 class GestorAudio {
-    constructor() {
+    constructor(sonsCarregados = {}) {
         this.mic = new p5.AudioIn();
         this.mic.start();
 
@@ -18,6 +18,9 @@ class GestorAudio {
         // Controlo do Ciclo de Congelação Seletiva - Sopro > 2s (Requisito 12)
         this.tempoAcimaLimiarMax = 0;
         this.congelacaoSeletivaPronta = false;
+
+        // Guarda os sons importados da pasta efeitossonoros
+        this.sons = sonsCarregados;
 
         // Oscilador do p5.sound para criar efeitos sonoros sem depender de ficheiros externos
         this.osc = new p5.Oscillator('sine');
@@ -98,20 +101,17 @@ class GestorAudio {
     tocarSom(tipo) {
         this.ativarContextoAudio();
         if (tipo === 'DISPARO') {
-            this.osc.setType('triangle');
-            this.osc.freq(600);
-            this.osc.amp(0.15, 0.02);
-            setTimeout(() => { this.osc.freq(300); this.osc.amp(0, 0.1); }, 60);
+            if (this.sons.spray && this.sons.spray.isLoaded()) {
+                this.sons.spray.play();
+            }
         } else if (tipo === 'ELIMINACAO') {
-            this.osc.setType('sine');
-            this.osc.freq(880);
-            this.osc.amp(0.2, 0.01);
-            setTimeout(() => { this.osc.freq(1200); this.osc.amp(0, 0.15); }, 80);
+            if (this.sons.eliminar && this.sons.eliminar.isLoaded()) {
+                this.sons.eliminar.play();
+            }
         } else if (tipo === 'CONGELAR') {
-            this.osc.setType('sine');
-            this.osc.freq(520);
-            this.osc.amp(0.25, 0.05);
-            setTimeout(() => { this.osc.freq(1040); this.osc.amp(0, 0.4); }, 200);
+            if (this.sons.congelar && this.sons.congelar.isLoaded()) {
+                this.sons.congelar.play();
+            }
         } else if (tipo === 'DANO') {
             this.osc.setType('sawtooth');
             this.osc.freq(150);
