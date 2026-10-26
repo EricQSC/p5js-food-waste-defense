@@ -7,7 +7,15 @@ Começei por fazer um prompt dizento o que queria para o Gemini Argon e fornecen
 Procedi então a abrir a consola e acusou de erro pois o gemini usao uma função que não existe no p5 para desenhar "pão" troqueia e passou a funcionar.
 
 20/10/2026
-
+Manhã
 Comecei por corrigir um pequeno erro que na tela de fim de jogo o texto de "jogar novamnte" ficava alinhado fora da caixa.
 
 Melhorias na tela final como remover a "comida salva" e a "comida desperdiçada" que na imagem gerada pelo chatGPT apareceram essas estatisticas mas não são relevantes para o jogo, e melhoria da astetica do titulo.
+
+Tarde
+
+Havia um problema que os microbios que nasciam da parte inferior mais no centro da tela e miravam nos alimentos mais altos atravessavam visualmente os alimentos que ficam mais em baixo, então para resolver esse erro fiz os microbios apenas nascerem dos lados.
+
+26/10/2026
+
+Comecei por eliminar um tracejado que tinha quando clicava entre a mira e o centro do jogo, e tambem troquei um pouco o aspecto do projetil.
